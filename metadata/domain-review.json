@@ -1,0 +1,73 @@
+{
+  "repo": "copper-sim-scheduler-lab",
+  "language": "C#",
+  "category": "Simulations",
+  "goal": "Create a C# reference implementation for scheduler workflows, centered on simulation kernel, seeded input scenarios, and deterministic summary checks.",
+  "review_model": {
+    "terms": [
+      "input pressure",
+      "state drift",
+      "review cost",
+      "decision risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "input pressure",
+      "signal": 42,
+      "slack": 44,
+      "drag": 20,
+      "confidence": 81,
+      "score": 149,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "state drift",
+      "signal": 48,
+      "slack": 28,
+      "drag": 30,
+      "confidence": 54,
+      "score": 88,
+      "lane": "hold"
+    },
+    {
+      "name": "edge",
+      "focus": "review cost",
+      "signal": 82,
+      "slack": 42,
+      "drag": 22,
+      "confidence": 59,
+      "score": 199,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "decision risk",
+      "signal": 74,
+      "slack": 32,
+      "drag": 30,
+      "confidence": 73,
+      "score": 163,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "input pressure",
+      "signal": 80,
+      "slack": 42,
+      "drag": 24,
+      "confidence": 89,
+      "score": 219,
+      "lane": "ship"
+    }
+  ]
+}
